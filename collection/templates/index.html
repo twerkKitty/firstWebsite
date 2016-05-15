@@ -1,6 +1,30 @@
 {% extends 'layouts/base.html' %}
+{% load humanize %}
 {% block title %}Homepage - {{ block.super }}{% endblock %} 
 {% block content %}
 <h1>Hello World!</h1>
 <p>I am a basic website.</p>
+<p>{{number}}</p> <!-- Taking the number from views and displaying it -->
+<p>{% if number %}Number exists!{% endif %}</p> <!-- Checking to see if the number actually exists -->
+
+<p>There are six dogs! <b>
+	{% if number == 6 %}
+		
+		True 
+	
+	{% else %}
+	
+		False 
+	
+	{% endif %}
+</b></p>
+
+<p>There are {{ number }} dog{{ number|pluralize }}!</p> <!-- If the number is not 1, it will pluralize the word -->
+
+<p>There is {{ number1 }} dog{{ number1|pluralize }}!</p> <!-- If the number is not 1, it will pluralize the word -->
+
+<p>There are {{ number }} walrus{{ number|pluralize:"es" }}!</p> <!-- You can also change the suffix -->
+
+<p>There are {{ number|apnumber }} dogs!</p> <!-- From the humanize app, can change numbers to words dynamically. In order for this to work, you must have {% load humanize %} in your code -->
+
 {% endblock %}
