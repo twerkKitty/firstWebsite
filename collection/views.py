@@ -6,11 +6,13 @@ def index(request):
 	
 	number = 6
 	number1 = 1
+	thing = "Thing name"
 	
 	return render(request, 'index.html', {
 		
 		'number': number,
 		'number1': number1,
+		'thing': thing, 
 		
 	}
 	

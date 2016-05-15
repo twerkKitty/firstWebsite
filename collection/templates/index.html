@@ -27,4 +27,10 @@
 
 <p>There are {{ number|apnumber }} dogs!</p> <!-- From the humanize app, can change numbers to words dynamically. In order for this to work, you must have {% load humanize %} in your code -->
 
+<p>This is my name: {{ thing }}</p>
+
+<p>This is my name: {{ thing|slugify }}</p> <!-- Shortened, lowercase version of the string -->
+
+<p>This is my name: {{ thing|title }}</p> <!-- Capitalizes each first letter like a title -->
+
 {% endblock %}
